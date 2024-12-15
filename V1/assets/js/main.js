@@ -281,7 +281,7 @@
         var targetElement = $(targetId); // Sélecteur de l'élément cible
 
         if (targetElement.length) { // Vérifie si l'élément cible existe
-            var targetPosition = targetElement.offset().top - navHeight + 460; // Position ajustée
+            var targetPosition = targetElement.offset().top - navHeight + 200; // Position ajustée
             $('html, body').animate(
                 { scrollTop: targetPosition },
                 500, // Durée de l'animation
@@ -332,6 +332,51 @@ function closeMobileMenuOnClick() {
 // Appel de la fonction
 closeMobileMenuOnClick();
 
+// Changement des buttons en fontion de la taille de l'ecran
+// Changement des boutons en fonction de la taille de l'écran
+function changeButtonSize() {
+  let windowWidth = $(window).width();
+  const btnAppleStoreImg = $('#btn-apple-store');
+  const btnGoogleStoreImg = $('#btn-google-play');
+  let appleStoreImgSrc = btnAppleStoreImg.attr('src');
+  let googleStoreImgSrc = btnGoogleStoreImg.attr('src');
+  console.log(windowWidth);
+  if (windowWidth < 767) {
+    btnAppleStoreImg.attr('src', appleStoreImgSrc.replace('taille-2', 'taille-1'));
+    btnGoogleStoreImg.attr('src', googleStoreImgSrc.replace('taille-2', 'taille-1'));
+    console.log(btnAppleStoreImg.attr('src'));
+    console.log(btnGoogleStoreImg.attr('src'));
+  } else {
+    btnAppleStoreImg.attr('src', appleStoreImgSrc.replace('taille-1', 'taille-2'));
+    btnGoogleStoreImg.attr('src', googleStoreImgSrc.replace('taille-1', 'taille-2'));
+  }
+}
 
-console.log('hello');
+// Appel de la fonction lors du chargement de la page
+changeButtonSize();
+
+// Appel de la fonction lors du redimensionnement de la fenêtre
+$(window).resize(changeButtonSize);
+
+  // Fonction pour obtenir la position du scroll
+  function getScrollPosition() {
+      let scrollPosition = $(window).scrollTop();
+      console.log(scrollPosition);
+      const logo = $('#logo');
+      if (scrollPosition > 1.33) {
+          logo.attr('src', './assets/images/logo/HBAE_SVG.svg');
+    }else{
+        logo.attr('src', './assets/images/logo/HBAE_SVG_3.svg');
+    }
+}
+
+  // Appel de la fonction lors du scroll
+  $(window).scroll(function() {
+      getScrollPosition();
+  });
+
+  // Appel de la fonction lors du chargement de la page
+  getScrollPosition();
+
+
 })(jQuery);
