@@ -426,7 +426,7 @@ img {
 }
 
 .section-margin-bottom {
-  margin-bottom: 0%;
+  margin-bottom: 120px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -4576,3 +4576,77 @@ img {
           box-shadow: none;
 }
 
+/* Card des differentes formules */
+.card {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+.ubuntu {
+  background: linear-gradient(145deg, #2B729B, #FF809C);
+}
+.jambaar {
+  background: linear-gradient(180deg, #044066 60%, #DE6681);
+}
+.prestige {
+  background: linear-gradient(180deg, #2c010b 40%, #FF809C);
+}
+.elite {
+  background: linear-gradient(180deg, #01243a 60%, #7fbadc);
+}
+.credits {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.stars {
+  margin-bottom: 10px;
+}
+.price {
+  background-color: #fff;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+.list-unstyled {
+  text-align: left;
+  padding-left: 20px;
+}
+.list-unstyled li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.list-unstyled li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+  font-size: 20px;
+}
+
+/* plus style */
+
+.plus-list {
+  list-style-type: none; /* Supprime les puces par défaut */
+  padding-left: 0; /* Supprime le retrait par défaut */
+}
+
+.plus-list li {
+  position: relative; /* Nécessaire pour positionner le symbole "+" */
+  padding-left: 20px; /* Espace pour le symbole "+" */
+}
+
+.plus-list li::before {
+  content: "+"; /* Ajoute le symbole "+" */
+  position: absolute; /* Positionne le symbole "+" */
+  left: 0; /* Place le symbole "+" à gauche */
+  color: #000; /* Couleur du symbole "+" */
+  font-weight: bold; /* Gras pour le symbole "+" */
+}
